@@ -1,0 +1,190 @@
+[[1]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: freq
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 4.59, p = 0.04
+R² = 0.07
+Adj. R² = 0.06 
+
+Standard errors: OLS
+---------------------------------------------------
+                       Est.    S.E.   t val.      p
+------------------ -------- ------- -------- ------
+(Intercept)          645.10   25.54    25.26   0.00
+afterannTRUE         -67.57   31.54    -2.14   0.04
+---------------------------------------------------
+
+[[2]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_black
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 2.03, p = 0.16
+R² = 0.03
+Adj. R² = 0.02 
+
+Standard errors: OLS
+---------------------------------------------------
+                       Est.    S.E.   t val.      p
+------------------ -------- ------- -------- ------
+(Intercept)          220.81    9.97    22.15   0.00
+afterannTRUE         -17.56   12.31    -1.43   0.16
+---------------------------------------------------
+
+[[3]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: freq
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 7.80, p = 0.01
+R² = 0.12
+Adj. R² = 0.10 
+
+Standard errors: OLS
+----------------------------------------------------
+                        Est.    S.E.   t val.      p
+------------------- -------- ------- -------- ------
+(Intercept)           643.69   21.20    30.36   0.00
+afterpresTRUE         -81.78   29.27    -2.79   0.01
+----------------------------------------------------
+
+[[4]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_black
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 6.14, p = 0.02
+R² = 0.09
+Adj. R² = 0.08 
+
+Standard errors: OLS
+----------------------------------------------------
+                        Est.    S.E.   t val.      p
+------------------- -------- ------- -------- ------
+(Intercept)           224.03    8.21    27.28   0.00
+afterpresTRUE         -28.10   11.34    -2.48   0.02
+----------------------------------------------------
+
+[[5]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: freq
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 11.02, p = 0.00
+R² = 0.16
+Adj. R² = 0.14 
+
+Standard errors: OLS
+---------------------------------------------------
+                       Est.    S.E.   t val.      p
+------------------ -------- ------- -------- ------
+(Intercept)          647.42   20.03    32.32   0.00
+afternomTRUE         -94.82   28.56    -3.32   0.00
+---------------------------------------------------
+
+[[6]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_black
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 8.91, p = 0.00
+R² = 0.13
+Adj. R² = 0.12 
+
+Standard errors: OLS
+---------------------------------------------------
+                       Est.    S.E.   t val.      p
+------------------ -------- ------- -------- ------
+(Intercept)          225.58    7.78    29.00   0.00
+afternomTRUE         -33.11   11.09    -2.99   0.00
+---------------------------------------------------
+
+[[7]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: freq
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 18.84, p = 0.00
+R² = 0.24
+Adj. R² = 0.23 
+
+Standard errors: OLS
+-----------------------------------------------------
+                         Est.    S.E.   t val.      p
+------------------- --------- ------- -------- ------
+(Intercept)            653.18   18.14    36.01   0.00
+afterelecTRUE         -118.36   27.27    -4.34   0.00
+-----------------------------------------------------
+
+[[8]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_black
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 21.29, p = 0.00
+R² = 0.27
+Adj. R² = 0.25 
+
+Standard errors: OLS
+----------------------------------------------------
+                        Est.    S.E.   t val.      p
+------------------- -------- ------- -------- ------
+(Intercept)           230.26    6.83    33.71   0.00
+afterelecTRUE         -47.38   10.27    -4.61   0.00
+----------------------------------------------------
+
+[[9]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: freq
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 18.48, p = 0.00
+R² = 0.24
+Adj. R² = 0.23 
+
+Standard errors: OLS
+------------------------------------------------------
+                          Est.    S.E.   t val.      p
+-------------------- --------- ------- -------- ------
+(Intercept)             649.42   17.67    36.75   0.00
+afterinaugTRUE         -118.66   27.60    -4.30   0.00
+------------------------------------------------------
+
+[[10]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_black
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,59) = 22.85, p = 0.00
+R² = 0.28
+Adj. R² = 0.27 
+
+Standard errors: OLS
+-----------------------------------------------------
+                         Est.    S.E.   t val.      p
+-------------------- -------- ------- -------- ------
+(Intercept)            229.42    6.57    34.89   0.00
+afterinaugTRUE         -49.10   10.27    -4.78   0.00
+-----------------------------------------------------
+
