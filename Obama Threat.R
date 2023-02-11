@@ -6,7 +6,7 @@
 #Dataset: Hate Crime Statistics, 1991-2020
 
 #Setup
-setwd("~/GitHub/threat_project/data_wrangling/")
+setwd("~/GitHub/threat_project/analysis/obama/")
 require(tidyverse)
 require(lubridate)
 require(table1)
@@ -17,7 +17,7 @@ require(jtools)
 
 
 #Data Importation and Time Setup
-df <- read_csv('../initial_run/hate_crime_FBI website.csv')
+df <- read_csv('../../initial_run/hate_crime_FBI website.csv')
 colnames(df) <- tolower(colnames(df))
 df$date <- dmy(df$incident_date)
 
