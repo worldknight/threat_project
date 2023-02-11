@@ -1,0 +1,100 @@
+[[1]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_latinx
+Type: OLS linear regression 
+
+MODEL FIT:
+F(2,58) = 58.13, p = 0.00
+R² = 0.67
+Adj. R² = 0.66 
+
+Standard errors: OLS
+--------------------------------------------------
+                       Est.   S.E.   t val.      p
+------------------ -------- ------ -------- ------
+(Intercept)          -12.21   4.14    -2.95   0.00
+afterannTRUE           0.47   2.05     0.23   0.82
+freq                   0.08   0.01     9.98   0.00
+--------------------------------------------------
+
+[[2]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_latinx
+Type: OLS linear regression 
+
+MODEL FIT:
+F(2,58) = 68.88, p = 0.00
+R² = 0.70
+Adj. R² = 0.69 
+
+Standard errors: OLS
+--------------------------------------------------
+                       Est.   S.E.   t val.      p
+------------------- ------- ------ -------- ------
+(Intercept)           -9.50   4.03    -2.35   0.02
+afterpresTRUE          4.93   1.84     2.69   0.01
+freq                   0.07   0.01     8.86   0.00
+--------------------------------------------------
+
+[[3]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_latinx
+Type: OLS linear regression 
+
+MODEL FIT:
+F(2,58) = 67.68, p = 0.00
+R² = 0.70
+Adj. R² = 0.69 
+
+Standard errors: OLS
+-------------------------------------------------
+                      Est.   S.E.   t val.      p
+------------------ ------- ------ -------- ------
+(Intercept)          -9.42   4.08    -2.31   0.02
+afternomTRUE          4.68   1.85     2.53   0.01
+freq                  0.07   0.01     8.83   0.00
+-------------------------------------------------
+
+[[4]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_latinx
+Type: OLS linear regression 
+
+MODEL FIT:
+F(2,58) = 68.51, p = 0.00
+R² = 0.70
+Adj. R² = 0.69 
+
+Standard errors: OLS
+--------------------------------------------------
+                       Est.   S.E.   t val.      p
+------------------- ------- ------ -------- ------
+(Intercept)           -9.44   4.05    -2.33   0.02
+afterelecTRUE          4.79   1.82     2.64   0.01
+freq                   0.07   0.01     9.10   0.00
+--------------------------------------------------
+
+[[5]]
+MODEL INFO:
+Observations: 61
+Dependent Variable: anti_latinx
+Type: OLS linear regression 
+
+MODEL FIT:
+F(2,58) = 68.02, p = 0.00
+R² = 0.70
+Adj. R² = 0.69 
+
+Standard errors: OLS
+----------------------------------------------------
+                         Est.   S.E.   t val.      p
+-------------------- -------- ------ -------- ------
+(Intercept)            -10.00   4.02    -2.49   0.02
+afterinaugTRUE           4.62   1.79     2.58   0.01
+freq                     0.07   0.01     9.51   0.00
+----------------------------------------------------
+
