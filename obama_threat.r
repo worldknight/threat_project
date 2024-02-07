@@ -1,7 +1,7 @@
 #Testing Group Threat Through Hate Crime & Presidential Campaigns (OBAMA)
 # PI: Ashley V. Reichelmann
 # Researcher: Jonathan A. LLoyd
-# Last Updated: April 8, 2023
+# Last Updated: Feb 6 2024
 #Dataset: Hate Crime Statistics, 1991-2020
 
 #Setup
@@ -35,7 +35,7 @@ month_hc <- df %>% group_by(month = lubridate::floor_date(date, "month")) %>% su
 daily_hc <- df %>% group_by(date) %>% summarize(freq=n(),anti_black = sum(anti_black == TRUE), anti_jewish = sum(anti_jewish == TRUE), anti_latinx = sum(anti_latinx == TRUE), anti_muslim = sum (anti_muslim == TRUE))
 
 ##Coding Event Dates
-milestones <- data.frame(milestone = c("10/02/2007: Announcement", "06/03/2008: Presumptive Candidate", "08/27/2008: Nominated", "11/04/2008: Elected", "01/20/2009: Inaugurated"), date = as.Date(c("2007-10-02", "2008-06-03", "2008-08-27", "2008-11-04", "2009-01-20")))
+milestones <- data.frame(milestone = c("Announcement", "Presumptive Candidate", "Nominated", "Elected", "Inaugurated"), date = as.Date(c("2007-10-02", "2008-06-03", "2008-08-27", "2008-11-04", "2009-01-20")))
 
 #Aggregating Dates
 month_milestones <- milestones %>% group_by(month = lubridate::floor_date(date, "month"))
@@ -58,31 +58,31 @@ week_data <- week_data %>% mutate(afterann = if_else(week >= "2007-09-30", TRUE,
 
 #Plotting
 break_dates<-as.Date(c("2006-01-01", "2006-07-01", "2007-01-01", "2007-07-01", "2008-01-01", "2008-07-01", "2009-01-01", "2009-07-01", "2010-01-01", "2010-07-01"))
-colors = c("Overall" = "purple", "Anti-Black" = "green")
+shapes = c("Overall" = 0, "Anti-Black" = 17)
 
-obama_ab_month <- ggplot(month_data, aes(label = milestone)) + geom_line(aes(x = month, y = anti_black), color = "purple") + geom_label_repel(aes(x = month, y = anti_black, label= milestone), nudge_y =-25, nudge_x = -100, direction = "y", color = "red") + geom_point(aes(x = month, y = anti_black), color = "purple") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black Hate Crimes from January 2006-January 2011",caption = "Virginia Tech") + theme(legend.position = "bottom") + ylim(100, 300) + scale_x_date(date_labels = "%B-%y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-01"))) + xlab("Time") + ylab("Incidents per Month")
+obama_ab_month <- ggplot(month_data, aes(label = milestone)) + geom_line(aes(x = month, y = anti_black), size = 1,color = "black") + geom_label_repel(aes(x = month, y = anti_black, label= milestone), nudge_y = -70, nudge_x = 0, direction = "y", color = "black", size = 4) + geom_point(aes(x = month, y = anti_black), size = 2, color = "black") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black Hate Crimes from January 2006-January 2011",caption = "Virginia Tech") + theme(legend.position = "bottom") + ylim(100, 300) + scale_x_date(date_labels = "%B-%y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-01"))) + xlab("Time") + ylab("Incidents per Month")
 print(obama_ab_month)
 
-obama_plot_combo_month <- ggplot(month_data, aes(label = milestone)) + scale_color_manual(values=colors) + geom_line(aes(x = month, y=anti_black, colour = "Anti-Black")) + geom_line(aes(x = month, y=freq, colour = "Overall")) + scale_x_date(date_labels = "%B-%y", breaks = break_dates, limits = as.Date(c("2006-01-01", "2010-12-01"))) + xlab("Time") + ylab("Incidents per Month") + geom_point(aes(x = month, y = freq, color = "Overall")) + geom_point(aes(x = month, y = anti_black, color = "Anti-Black")) + geom_label_repel(aes(x = month, y = freq, label = milestone), nudge_y = 175, direction = "y") + geom_label_repel(aes(x = month, y = anti_black, label = milestone), nudge_y = -100, direction = "y" ) + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", color = "") + theme(legend.position = "bottom") + ylim(0, 900)
+obama_plot_combo_month <- ggplot(month_data, aes(label = milestone)) + scale_shape_manual(values=shapes) + geom_line(aes(x = month, y=anti_black)) + geom_line(aes(x = month, y=freq)) + scale_x_date(date_labels = "%B-%y", breaks = break_dates, limits = as.Date(c("2006-01-01", "2010-12-01"))) + xlab("Time") + ylab("Incidents per Month") + geom_point(aes(x = month, y = freq, shape = "Overall")) + geom_point(aes(x = month, y = anti_black, shape = "Anti-Black")) + geom_label_repel(aes(x = month, y = freq, label = milestone), nudge_y = 175, direction = "y") + geom_label_repel(aes(x = month, y = anti_black, label = milestone), nudge_y = -100, direction = "y" ) + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", shape = "") + theme(legend.position = "bottom") + ylim(0, 900)
 print(obama_plot_combo_month)
 
-obama_ab_week <- ggplot(week_data, aes(label = milestone)) + geom_line(aes(x = week, y = anti_black), color = "purple") + geom_label_repel(aes(x = week, y = anti_black, label= milestone), nudge_y = 90, direction = "y", color = "black") + geom_point(aes(x = week, y = anti_black), color = "purple") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black Hate Crimes from January 2006-January 2011",caption = "Virginia Tech") + theme(legend.position = "bottom") + ylim(0, 175) + scale_x_date(date_labels = "%B-%y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-26"))) + xlab("Time") + ylab("Incidents per Week")
+obama_ab_week <- ggplot(week_data, aes(label = milestone)) + geom_line(aes(x = week, y = anti_black), color = "black") + geom_label_repel(aes(x = week, y = anti_black, label= milestone), nudge_y = 90, direction = "y", color = "black") + geom_point(aes(x = week, y = anti_black), color = "black") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black Hate Crimes from January 2006-January 2011",caption = "Virginia Tech") + theme(legend.position = "bottom") + ylim(0, 175) + scale_x_date(date_labels = "%B-%y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-26"))) + xlab("Time") + ylab("Incidents per Week")
 print(obama_ab_week)
 
-obama_plot_combo_week <- ggplot(week_data, aes(label = milestone)) + scale_color_manual(values=colors) + geom_line(aes(x = week, y=anti_black, colour = "Anti-Black")) + geom_line(aes(x = week, y=freq, colour = "Overall")) + scale_x_date(date_labels = "Week %U-%Y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-26"))) + xlab("Time") + ylab("Incidents per Week") + geom_point(aes(x = week, y = freq, color = "Overall")) + geom_point(aes(x = week, y = anti_black, color = "Anti-Black")) + geom_label_repel(aes(x = week, y = freq, label = milestone), nudge_y = 100, direction = "y") + geom_label_repel(aes(x = week, y = anti_black, label = milestone), nudge_y = -75, direction = "y" ) + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", color = "") + theme(legend.position = "bottom") + ylim(NA, 300)
+obama_plot_combo_week <- ggplot(week_data, aes(label = milestone)) + scale_shape_manual(values=shapes) + geom_line(aes(x = week, y=anti_black)) + geom_line(aes(x = week, y=freq)) + scale_x_date(date_labels = "Week %U-%Y", date_breaks = "6 months", limits = as.Date(c("2006-01-01", "2010-12-26"))) + xlab("Time") + ylab("Incidents per Week") + geom_point(aes(x = week, y = freq, shape = "Overall")) + geom_point(aes(x = week, y = anti_black, shape = "Anti-Black")) + geom_label_repel(aes(x = week, y = freq, label = milestone), nudge_y = 100, direction = "y") + geom_label_repel(aes(x = week, y = anti_black, label = milestone), nudge_y = -75, direction = "y" ) + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", shape = "") + theme(legend.position = "bottom") + ylim(NA, 300)
 print(obama_plot_combo_week)
 
 year_avg <- daily_data %>% group_by(year = year(date)) %>% summarise(mean_hc = mean(freq), mean_ab = mean(anti_black))
 
-obama_plot_year_avg <- ggplot(year_avg) + scale_color_manual(values= colors) + geom_line(aes(x=year, y = mean_ab, color = "Anti-Black")) + geom_line(aes(x = year, y = mean_hc, color = "Overall")) + geom_point(aes(x = year, y = mean_hc, color = "overall")) + geom_point(aes(x = year, y = mean_ab, color = "Anti-Black")) + xlab("Year") + ylab("Average Daily Incidents") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", color = "") + theme(legend.position = "bottom")
+obama_plot_year_avg <- ggplot(year_avg) + scale_shape_manual(values= shapes) + geom_line(aes(x=year, y = mean_ab)) + geom_line(aes(x = year, y = mean_hc)) + geom_point(aes(x = year, y = mean_hc, shape = "Overall")) + geom_point(aes(x = year, y = mean_ab, shape = "Anti-Black")) + xlab("Year") + ylab("Average Daily Incidents") + theme_bw() + labs(title = "Hate Crimes & the 2008 Obama Campaign", subtitle = "Anti-Black and Overall Hate Crimes from January 2006-January 2011",caption = "Virginia Tech", shape = "") + theme(legend.position = "bottom")
 print(obama_plot_year_avg)
 
 
 #Save Plots
-ggsave("hc_plot_month.png", plot = obama_plot_combo_month, dpi = 300)
-ggsave("hc_plot_week.png", plot = obama_plot_combo_week, dpi = 300)
-ggsave("anti_black_plot_month.png", plot = obama_ab_month, dpi = 300)
-ggsave("hc_plot_daily.png", plot = obama_plot_year_avg, dpi = 300)
+ggsave("hc_plot_month_bw.png", plot = obama_plot_combo_month, dpi = 300)
+ggsave("hc_plot_week_bw.png", plot = obama_plot_combo_week, dpi = 300)
+ggsave("anti_black_plot_month_bw.png", plot = obama_ab_month, dpi = 300)
+ggsave("hc_plot_daily_bw.png", plot = obama_plot_year_avg, dpi = 300)
 
 #Regression Setup
 predictors <- list("~ afterann", "~ afterpres", "~ afternom", "~ afterelec", "~ afterinaug")
