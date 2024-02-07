@@ -1,3 +1,3 @@
 # threat_project
- 
- "Capturing Racial Threat: Measuring Anti-Black Hate Crimes During Obama’s Presidential Ascent" codes and charts.
+ Code, data, and figures used for the following projects:
+ 1. "Capturing Racial Threat: Measuring Anti-Black Hate Crimes During Obama’s Presidential Ascent"
